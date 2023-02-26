@@ -1,0 +1,17 @@
+input[type="file"] {
+  display: none;
+}
+.fileInput {
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px dashed #ccc;
+  padding: 4rem;
+
+  cursor: pointer;
+  font-size: 0.7rem;
+}

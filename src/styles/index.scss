@@ -1,0 +1,18 @@
+@use "./var.scss" as v;
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&display=swap");
+@import url("./global.scss");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Fira Code", monospace;
+}
+
+body {
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+  background: v.$body-bg-color;
+  color: v.$body-color;
+  cursor: auto;
+}
