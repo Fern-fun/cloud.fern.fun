@@ -6,6 +6,7 @@ const FileContainer = React.lazy(
 
 function Home() {
   const [file, setFile] = React.useState<File>();
+  const [reload, setReload] = React.useState<boolean>(false);
 
   const uploadFileHandler = async () => {
     console.log(file);
@@ -24,6 +25,7 @@ function Home() {
           },
         }
       );
+      setReload((e) => !e);
     }
   };
 
@@ -34,7 +36,7 @@ function Home() {
         <FileInput setFile={setFile} />
         {file ? <button onClick={uploadFileHandler}>Upload</button> : null}
       </div>
-      <FileContainer />
+      <FileContainer reload={true} />
     </div>
   );
 }

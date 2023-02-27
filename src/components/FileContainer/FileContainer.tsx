@@ -1,6 +1,12 @@
 import React from "react";
 
-function FileContainer() {
+import "./FileContainer.scss";
+
+type FileContainerProps = {
+  reload: boolean;
+};
+
+const FileContainer: React.FC<FileContainerProps> = ({ reload }) => {
   const [files, setFiles] = React.useState<any[]>([]);
 
   React.useEffect(() => {
@@ -14,12 +20,12 @@ function FileContainer() {
         console.log(data);
         setFiles(data.data);
       });
-  }, []);
+  }, [reload]);
 
   return (
     <div className="filesContainer">
       {files.map((item) => (
-        <div key={item.id}>
+        <div key={item.id} className="fileTile">
           {item.name}
           <a
             href={`https://api.fern.fun/cloud/download/${
@@ -34,6 +40,6 @@ function FileContainer() {
       ))}
     </div>
   );
-}
+};
 
 export default FileContainer;
